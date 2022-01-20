@@ -1,0 +1,16 @@
+name: safelinks
+parent: default
+
+matches:
+  - trigger: ":sl"
+    replace: "{{output}}"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: output
+        type: script
+        params:
+          args:
+            - python
+            - "%CONFIG%/scripts/safelinks.py"
+            - "{{clipboard}}"

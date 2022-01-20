@@ -1,0 +1,9 @@
+name: outlook
+parent: default
+
+matches:
+  - trigger: ":email"
+    replace: "https://outlook.office.com/owa/?ItemID={{clipboard}}&viewmodel=ReadMessageItem&path=&exvsurl=1"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"

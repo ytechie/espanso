@@ -1,0 +1,33 @@
+name: breadcrumb
+parent: default
+
+matches:
+  - trigger: ":bc"
+    word: true
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo `date -v -1d \"+[[%Y-%m-%d-%a|<< Prev]]\"`' | '`date -v +1d \"+[[%Y-%m-%d-%a|Next >>]]\"`" 
+
+ # Meeting
+  - trigger: ":meet"
+    word: true
+    replace: |
+             ### 0000 Meeting
+             Topic: 
+             Attendees:
+             Tasks:
+             Notes:
+
+ # date header
+  - trigger: ":dh"
+    replace: "### [[{{thedate}}]]"
+    vars:
+      - name: thedate
+        type: date
+        params:
+          format: "%Y-%m-%d-%a"
+
+
