@@ -27,7 +27,6 @@ def eventSort(e):
         
     return o.strftime("%Y-%m-%d %H:%M")
 
-#events.sort(key=eventSort)
 for event in sorted(events, key=eventSort):
     start = event["DTSTART"].dt
     end = event["DTEND"].dt
