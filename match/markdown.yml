@@ -1,0 +1,16 @@
+name: markdown
+parent: default
+
+matches:
+  - trigger: ":md"
+    replace: "{{output}}"
+    vars:
+      - name: "clipboard"
+        type: "clipboard"
+      - name: output
+        type: script
+        params:
+          args:
+            - python3
+            - "%CONFIG%/scripts/sanitize-md.py"
+            - "{{clipboard}}"

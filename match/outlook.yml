@@ -7,3 +7,33 @@ matches:
     vars:
       - name: "clipboard"
         type: "clipboard"
+
+  - trigger: ":day"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: script
+        params:
+          args:
+            - python3
+            - "%CONFIG%/scripts/getcal.py"
+
+  - trigger: ":t"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: script
+        params:
+          args:
+            - python3
+            - "%CONFIG%/scripts/emojitest.py"
+
+  - trigger: ":su"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: script
+        params:
+          args:
+            - python3
+            - "%CONFIG%/scripts/status-update.py"

@@ -11,6 +11,6 @@ matches:
         type: script
         params:
           args:
-            - python
+            - python3
             - "%CONFIG%/scripts/safelinks.py"
             - "{{clipboard}}"
